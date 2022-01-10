@@ -1,0 +1,12 @@
+{
+  "name": "pokeapi-graphql",
+  "version": "1.0.0",
+  "description": "Pokeapi GraphQL API",
+  "main": "index.js",
+  "repository": "https://github.com/mikaws/pokeapi-graphql.git",
+  "author": "Michael Henrique - Mikaws",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
