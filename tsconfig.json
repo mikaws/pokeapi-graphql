@@ -4,8 +4,7 @@
     "module": "commonjs",
     "target": "es2019",
     "esModuleInterop": true,
-    "allowJs": true
-  },
-  "include": ["./**/*.ts"],
-  "exclude": ["node_modules/**/*"]
+    "allowJs": true,
+    "strictNullChecks": true
+  }
 }
