@@ -8,5 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js"
+  },
+  "devDependencies": {
+    "git-commit-msg-linter": "^3.3.3"
   }
 }
