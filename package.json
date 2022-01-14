@@ -7,10 +7,10 @@
   "author": "Michael Henrique - Mikaws",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
     "prepare": "husky install",
     "pre-commit-lint": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "test:staged": "jest"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
