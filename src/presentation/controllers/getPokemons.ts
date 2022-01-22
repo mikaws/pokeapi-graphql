@@ -1,3 +1,4 @@
+import { MissingParamError } from '../errors/missing-param-error'
 import { HttpRequest, HttpResponse } from '../protocols/http'
 
 export class GetPokemonsController {
@@ -7,13 +8,13 @@ export class GetPokemonsController {
     if (!limit) {
       return {
         statusCode: 400,
-        body: new Error('Missing param: limit')
+        body: new MissingParamError('limit')
       }
     }
     if (!offset) {
       return {
         statusCode: 400,
-        body: new Error('Missing param: offset')
+        body: new MissingParamError('offset')
       }
     }
   }

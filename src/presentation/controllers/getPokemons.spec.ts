@@ -1,3 +1,4 @@
+import { MissingParamError } from '../errors/missing-param-error'
 import { GetPokemonsController } from './getPokemons'
 
 const sut = new GetPokemonsController()
@@ -12,7 +13,7 @@ describe('GetPokemons Controller', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Missing param: limit'))
+    expect(httpResponse.body).toEqual(new MissingParamError('limit'))
   })
   test('Should return 400 if no offset is provided', () => {
     const httpRequest = {
@@ -23,6 +24,6 @@ describe('GetPokemons Controller', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Missing param: offset'))
+    expect(httpResponse.body).toEqual(new MissingParamError('offset'))
   })
 })
