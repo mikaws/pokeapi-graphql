@@ -9,8 +9,8 @@
   "scripts": {
     "prepare": "husky install",
     "pre-commit-lint": "lint-staged",
-    "test": "jest",
-    "test:staged": "jest"
+    "test": "jest --passWithNoTests --watch",
+    "test:staged": "jest --passWithNoTests"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
