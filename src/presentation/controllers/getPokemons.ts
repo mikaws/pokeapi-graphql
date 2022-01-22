@@ -19,5 +19,8 @@ export class GetPokemonsController {
     if (variables.limit < 0) {
       return badRequest(new WrongParamError('limit'))
     }
+    if (variables.offset < 0) {
+      return badRequest(new WrongParamError('offset'))
+    }
   }
 }
