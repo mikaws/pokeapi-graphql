@@ -1,5 +1,7 @@
+import { HttpRequest, HttpResponse } from '../protocols/http'
+
 export class GetPokemonsController {
-  handle (httpRequest: any): any {
+  handle (httpRequest: HttpRequest): HttpResponse {
     const limit = JSON.parse(httpRequest.body).variables.limit
     const offset = JSON.parse(httpRequest.body).variables.offset
     if (!limit) {
