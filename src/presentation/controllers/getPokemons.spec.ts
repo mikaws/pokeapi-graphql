@@ -38,4 +38,15 @@ describe('GetPokemons Controller', () => {
     expect(httpResponse.statusCode).toBe(400)
     expect(httpResponse.body).toEqual(new WrongParamError('limit'))
   })
+  test('Should return 400 if offset is less than 0', () => {
+    const httpRequest = {
+      body: JSON.stringify({
+        query: 'any-query',
+        variables: { limit: 1, offset: -1 }
+      })
+    }
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.statusCode).toBe(400)
+    expect(httpResponse.body).toEqual(new WrongParamError('offset'))
+  })
 })
