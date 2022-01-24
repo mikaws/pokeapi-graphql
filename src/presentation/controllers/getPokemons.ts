@@ -1,5 +1,5 @@
 import { MissingParamError } from '../errors/missing-param-error'
-import { WrongParamError } from '../errors/wrong-param-error'
+import { InvalidParamError } from '../errors/invalid-param-error'
 import { badRequest } from '../helpers/http-helper'
 import { HttpRequest, HttpResponse } from '../protocols/http'
 
@@ -15,12 +15,12 @@ export class GetPokemonsController {
       return badRequest(new MissingParamError('offset'))
     }
 
-    // Wrong Param Validators
+    // Invalid Param Validators
     if (variables.limit < 0) {
-      return badRequest(new WrongParamError('limit'))
+      return badRequest(new InvalidParamError('limit'))
     }
     if (variables.offset < 0) {
-      return badRequest(new WrongParamError('offset'))
+      return badRequest(new InvalidParamError('offset'))
     }
   }
 }

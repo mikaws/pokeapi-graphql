@@ -1,5 +1,5 @@
 import { MissingParamError } from '../errors/missing-param-error'
-import { WrongParamError } from '../errors/wrong-param-error'
+import { InvalidParamError } from '../errors/invalid-param-error'
 import { GetPokemonsController } from './getPokemons'
 
 const sut = new GetPokemonsController()
@@ -36,7 +36,7 @@ describe('GetPokemons Controller', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new WrongParamError('limit'))
+    expect(httpResponse.body).toEqual(new InvalidParamError('limit'))
   })
   test('Should return 400 if offset is less than 0', () => {
     const httpRequest = {
@@ -47,6 +47,6 @@ describe('GetPokemons Controller', () => {
     }
     const httpResponse = sut.handle(httpRequest)
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new WrongParamError('offset'))
+    expect(httpResponse.body).toEqual(new InvalidParamError('offset'))
   })
 })
